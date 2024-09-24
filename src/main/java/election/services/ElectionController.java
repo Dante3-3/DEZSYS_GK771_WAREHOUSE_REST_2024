@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class ElectionController {
 
     @Autowired
-    private ElectionService electionService;
+    private ElectionService electionService = new ElectionService();
 
     @RequestMapping("/")
     public String electionMain() {
