@@ -5,8 +5,14 @@ import election.model.Party;
 import election.model.Vorzugskandidaten;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 public class ElectionSimulation {
+
+	public int generateRandomNumber(int bisNummer){
+		Random zufall = new Random();
+		return zufall.nextInt(bisNummer);
+	}
 
 	public ElectionData getData(int eID) {
 		// Create election data
@@ -16,8 +22,8 @@ public class ElectionSimulation {
 
 		// Create preference candidates
 		ArrayList<Vorzugskandidaten> candidates = new ArrayList<>();
-		candidates.add(new Vorzugskandidaten("OEVP", 1, "Max Mustermann", 100));
-		candidates.add(new Vorzugskandidaten("SPOE", 2, "Anna Musterfrau", 120));
+		candidates.add(new Vorzugskandidaten("OEVP", 1, "Max Mustermann", generateRandomNumber(500)));
+		candidates.add(new Vorzugskandidaten("SPOE", 2, "Anna Musterfrau", generateRandomNumber(200)));
 
 		// Create parties
 		ArrayList<Party> parties = new ArrayList<>();
